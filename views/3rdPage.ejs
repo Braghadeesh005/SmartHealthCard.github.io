@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Health Card</title>
+    <style>
+        .rab{
+            font-size: 50px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 2px teal;
+            font-family:fantasy;
+            background-image: linear-gradient(120deg,rgb(12, 173, 237),teal);
+        }
+        .ra{
+            font-size: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(23, 115, 77);
+            font-family:'Times New Roman', Times, serif;
+            background-image: linear-gradient(120deg,rgb(18, 79, 103),rgb(48, 165, 91));
+        }
+        body{ 
+            text-align: center;
+            background-image:url("hi.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        h2{
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+           
+        }
+        .x{grid-area: a}
+        .y{grid-area: b}
+
+        .z{
+            
+            display: grid;
+            grid-template-areas: 
+            'a b';
+           background-attachment: fixed;
+           
+          
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;  
+        }  
+        .z > div{
+            background-attachment: fixed;
+            padding: 20px;
+            margin: 50px;
+            background-image: linear-gradient(120deg,rgb(43, 221, 155),rgb(105, 103, 216));
+            color: rgb(2, 2, 2);
+            border-radius: 5px;
+            width: 80%;
+            height: 90%;
+        }
+        .d
+        {
+            width: 65px;
+             height: 65px;
+            border-radius: 50%;
+        }
+        .e{
+            width: 200px;
+            height:200px;
+        }
+     
+    </style>
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    
+    <h1 class="rab"><pre><img src="https://media.istockphoto.com/vectors/health-care-logo-vector-design-element-vector-id958800720?k=20&m=958800720&s=612x612&w=0&h=_aJjZnb3coqA99j5NdBQBSdItRCsTpEMEQlbGGm1Shc=" class="d"> S m a r t   H e a l t h   C a r d</pre></h1>
+   
+    <br>
+   
+    <div class="z">
+    
+        <div class="x" align="left">
+        <br>
+        <strong>NAME               :</strong>  <%= data.PatientName %><br><br>                
+        <strong> Date Of Birth     :</strong>   <%= data.DateOfBirth %><br><br>              
+        <strong>  Age                     :</strong> <%= data.Age %><br><br>
+        <strong>  Blood Group      :</strong> <%= data.BloodGroup %><br><br> 
+        <strong>  Emergency No   :</strong>  <%= data.PhoneNumber %><br><br>
+        <strong> Address          :</strong> <%= data.Address %>
+        </div>
+     
+        <div class="y" align="left">
+        <br>
+        <div align="center" id="qrcode"></div>
+        </div>
+
+    </div>
+
+    <button class="btn btn-primary" onclick="generateQR()">Click To Generate QR Code</button>
+   
+</body>
+
+<script src="qrcode.min.js"></script>
+    <script>
+      
+            var qrdata = "https://nzfdmip7fd5iiqvbvfvs4a.on.drv.tw/www.smartcard.com/views/2ndpage.ejs";
+            var qrcode = new QRCode(document.getElementById('qrcode'));
+
+            function generateQR(){
+                qrcode.makeCode(qrdata)
+            }
+
+
+    </script>
+</html>

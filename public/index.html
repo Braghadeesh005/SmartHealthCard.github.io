@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Health Card Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        .rab{
+            font-size: 50px;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 2px teal;
+            font-family:fantasy;
+            background-image: linear-gradient(120deg,rgb(12, 173, 237),teal);
+        }
+        .ra{
+            font-size: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(23, 115, 77);
+            font-family:'Times New Roman', Times, serif;
+            background-image: linear-gradient(120deg,rgb(18, 79, 103),rgb(48, 165, 91));
+        }
+        body{
+            background-image:url("hi.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        h2{
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+           
+        }
+        .a{grid-area: a}
+        .b{grid-area: b}
+        .M{
+            display: grid;
+            grid-template-areas: 
+            'a b';
+        
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;  
+        }  
+        .M > div{
+            padding: 20px;
+            margin: 20px;
+            background-image: linear-gradient(120deg,rgb(43, 221, 155),rgb(105, 103, 216));
+            color: rgb(2, 2, 2);
+            border-radius: 5px;
+        }
+        img 
+        {
+             width: 65px;
+             height: 65px;
+        }
+        .d
+        {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+   
+    <h1 class="rab"><pre><img src="https://media.istockphoto.com/vectors/health-care-logo-vector-design-element-vector-id958800720?k=20&m=958800720&s=612x612&w=0&h=_aJjZnb3coqA99j5NdBQBSdItRCsTpEMEQlbGGm1Shc=" class="d"> S m a r t   H e a l t h   C a r d</pre></h1>
+    <form action="/card" method="post">
+    <div class="M">   
+
+    <div class="a">
+        <br><br>
+        <h3 class="ra">General Details</h3><pre><h2>
+        NAME               :  <input type="text" name="PatientName">
+                
+        Address              :  <input type="text" name="Address">
+
+        Date Of Birth     :           <input type="date" name="dob" size="100%">
+              
+        Age                     :  <input type="number" name="age">
+
+        Blood Group      :  <input type="text" name="bloodGroup">
+              
+        Emergency No   :  <input type="number" name="PhNumber">
+               
+        <label>Gender               :         </label><input type="radio" name="gender">Male       <input type="radio" name="Female">Female 
+    </h2></pre>         
+    </div>
+
+    <div class="b">
+        <br><br>
+        <h3 class="ra">Medical Details</h3><pre><h2>
+            Primary Consultant                     :      <input type="text" name="ConsultantName">
+
+            Consulting Clinic/Hospital         :      <input type="text" name="Hospital">
+
+            Blood Pressure Level                  :      <input type="text" name="BloodP">
+
+            Sugar Level                                 :      <input type="text" name="DiaB">
+
+            Allergies                                      :      <input type="text" name="Allergies">
+
+            Disabilities                                  :      <input type="text" name="Disabilities">
+
+            History of Diabetus Mellitus      :       <input type="text" name="diabetes">
+
+            History of Road Accidents          :      <input type="text" name="Accidents">
+
+            History of Bone Dislocations      :      <input type="text" name="bone">
+
+            History of Heart Diseases            :      <input type="text" name="Heart">
+
+        </h2></pre>
+    </div>
+
+    </div>
+    <h1 class="rab"><pre>G E N E R A T E   S M A R T   C A R D   <img src="data:image/png;base64,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">
+</pre></h1>
+        <div align="center" ><input type="submit" class="btn btn-primary"></div>
+    </form>
+    
+</body>
+</html>
