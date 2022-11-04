@@ -79,6 +79,6 @@ app.post('/qr',(req,res)=>{
     return res.render('3rdPage',{data})
 })
 app.get('/',(req,res)=>{
-    return res.redirect('index.html')
+    return res.redirect('a.html')
 }).listen(3000)
 console.log("server started..")
